@@ -1,9 +1,13 @@
 var Trackster = {};
 
+var API_KEY = "6c4bf89865d4258014d237c23d18f755"
+
 $(document).ready(function(){
   $("#search").click(function() {
   	Trackster.searchTracksByTitle($("input").val())
   });
+  $.ajax("http://ws.audioscrobbler.com/2.0/?method=track.search&track=" + $("input").val() + "&api_key=" + API_KEY );
+  console.log("Ajax request was succesful");
 });
 
 /*
