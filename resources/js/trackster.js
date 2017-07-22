@@ -6,17 +6,6 @@ $(document).ready(function(){
   $("#search").click(function() {
   	Trackster.searchTracksByTitle($("input").val())
   });
-  $.ajax({
-   type: 'POST',
-   url: "http://ws.audioscrobbler.com/2.0/?method=track.search&track=" + $("input").val() + "&api_key=" + API_KEY,
-   success: function() {
-   	console.log("Ajax request successful")
-   },
-   error: function(xhr, status, error) {
-     console.log("An error occurred")
-   },
-   dataType: 'text'
-   });
 });
 
 /*
@@ -32,5 +21,15 @@ Trackster.renderTracks = function(tracks) {
   Render the tracks given in the API query response.
 */
 Trackster.searchTracksByTitle = function(title) {
-
+    $.ajax({
+   type: 'title',
+   url: "http://ws.audioscrobbler.com/2.0/?method=track.search&track=" + title + "&api_key=" + API_KEY,
+   success: function() {
+   	console.log(title)
+   },
+   error: function(xhr, status, error) {
+     console.log("An error occurred")
+   },
+   dataType: 'text'
+   });
 };
