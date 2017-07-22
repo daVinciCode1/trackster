@@ -1,6 +1,6 @@
 var Trackster = {};
 
-var API_KEY = "6c4bf89865d4258014d237c23d18f755"
+var API_KEY = "something"
 
 $(document).ready(function(){
   $("#search").click(function() {
