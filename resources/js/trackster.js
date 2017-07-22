@@ -6,8 +6,17 @@ $(document).ready(function(){
   $("#search").click(function() {
   	Trackster.searchTracksByTitle($("input").val())
   });
-  $.ajax("http://ws.audioscrobbler.com/2.0/?method=track.search&track=" + $("input").val() + "&api_key=" + API_KEY );
-  console.log("Ajax request was succesful");
+  $.ajax({
+   type: 'POST',
+   url: "http://ws.audioscrobbler.com/2.0/?method=track.search&track=" + $("input").val() + "&api_key=" + API_KEY,
+   success: function() {
+   	console.log("Ajax request successful")
+   },
+   error: function(xhr, status, error) {
+     console.log("An error occurred")
+   },
+   dataType: 'text'
+   });
 });
 
 /*
