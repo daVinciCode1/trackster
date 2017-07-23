@@ -17,7 +17,7 @@ header {
 }
 
 header h1 {
-  margin: 2.5rem 1.25rem;
+  margin: 2.75rem 1.25rem;
   font-family: "Righteous", sans-serif;
   font-size: 2.5rem;
   color: rgb(255,0,171);
@@ -34,12 +34,12 @@ header input:focus {
 }
 
 header #searchbar {
-  margin: 2.5rem 0;
+  margin: 2.75rem 0;
 }
 
 header .btn {
   font-size: 1.75rem;
-  margin: 2.5rem 0;
+  margin: 2.75rem 0;
   color: black;
   background-color: rgb(255,0,171);
   border-radius: 1rem;
@@ -56,4 +56,13 @@ header .btn:hover {
 header .btn:active {
   background-color:rgb(255,102,204);
   color: black;
+}
+
+/* Column Headers */
+
+.column_headers {
+  padding: 0.5rem;
+  background-color: rgb(104,0,255);
+  color: rgb(255,255,255);
+  font-weight: 500;
 }
