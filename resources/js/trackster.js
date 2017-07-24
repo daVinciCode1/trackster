@@ -1,6 +1,6 @@
 var Trackster = {};
 
-var API_KEY = "<place API KEY here>"
+var API_KEY = "<place api key here>"
 
 $(document).ready(function(){
   $("#search").click(function() {
@@ -13,10 +13,11 @@ $(document).ready(function(){
   Append each "row" to the container in the body to display all tracks. 
 */
 Trackster.renderTracks = function(tracks) {
-  for (i=0; i<tracks.length; i++) {
-    var html="<div class='song'>"+"<div class='col-md-offset-1 col-md-1'><a href='#''><i class='glyphicon glyphicon-play-circle'></i></a></div>"+
-    "<div class='col-md-4'>"+tracks[i].title+"</div>"+"<div class='col-md-2'>"+tracks[i].artist+"</div>"+"<div class='col-md-2'>"+tracks[i].album+"</div>"+
-    "<div class='col-md-2>"+tracks[i].popularity+"</div>"+"</div>";
+  for (i=0; i < response.results.trackmatches.length; i++) {
+    var mediumAlbumArt=track.image[1]["#text"];
+    var html="<div class='song'>"+"<div class='col-md-offset-1 col-md-1'><a href='"+mediumAlbumArt+"''><i class='glyphicon glyphicon-play-circle'></i></a></div>"+
+    "<div class='col-md-4'>"+tracks[i].title+"</div>"+"<div class='col-md-2'>"+tracks[i].artist+"</div>"+"<div class='col-md-2'>"+tracks[i].image+"</div>"+
+    "<div class='col-md-2>"+tracks[i].listeners+"</div>"+"</div>";
     $("#songlist").append(html);
   };
 };
@@ -30,7 +31,7 @@ $.ajax({
    type: 'GET',
    url: "http://ws.audioscrobbler.com/2.0/?method=track.search&track=" + title + "&api_key=" + API_KEY,
    success: function(response) {
-   	console.log(response);
+   	Trackster.renderTracks(response.results.trackmatches.track);
    },
    error: function(xhr, status, error) {
      console.log("An error occurred")
