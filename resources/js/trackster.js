@@ -14,8 +14,11 @@ $(document).ready(function(){
 */
 Trackster.renderTracks = function(tracks) {
   for (i=0; i<tracks.length; i++) {
-    var html=""
-  }
+    var html="<div class='song'>"+"<div class='col-md-offset-1 col-md-1'><a href='#''><i class='glyphicon glyphicon-play-circle'></i></a></div>"+
+    "<div class='col-md-4'>"+tracks[i].title+"</div>"+"<div class='col-md-2'>"+tracks[i].artist+"</div>"+"<div class='col-md-2'>"+tracks[i].album+"</div>"+
+    "<div class='col-md-2>"+tracks[i].popularity+"</div>"+"</div>";
+    $("#songlist").append(html);
+  };
 };
 
 /*
