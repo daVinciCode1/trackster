@@ -13,7 +13,9 @@ $(document).ready(function(){
   Append each "row" to the container in the body to display all tracks. 
 */
 Trackster.renderTracks = function(tracks) {
-
+  for (i=0; i<tracks.length; i++) {
+    var html=""
+  }
 };
 
 /*
@@ -21,7 +23,7 @@ Trackster.renderTracks = function(tracks) {
   Render the tracks given in the API query response.
 */
 Trackster.searchTracksByTitle = function(title) {
-    $.ajax({
+$.ajax({
    type: 'GET',
    url: "http://ws.audioscrobbler.com/2.0/?method=track.search&track=" + title + "&api_key=" + API_KEY,
    success: function(response) {

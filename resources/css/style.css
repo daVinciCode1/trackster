@@ -33,6 +33,10 @@ header input:focus {
   outline: none;
 }
 
+header input, header select, header textarea {
+  color: rgb(74,74,74);
+}
+
 header #searchbar {
   margin: 2.75rem 0;
 }
@@ -61,8 +65,33 @@ header .btn:active {
 /* Column Headers */
 
 .column_headers {
-  padding: 0.5rem;
+  padding: 0.5rem 0;
   background-color: rgb(104,0,255);
   color: rgb(255,255,255);
   font-weight: 500;
 }
+
+/* Song List styling */
+
+.song {
+  font-family: "Work Sans", sans-serif;
+  font-size: 1rem;
+  color: rgb(74,74,74);
+  border-top: 1px solid rgb(204,204,204);
+  border-bottom: 1px solid rgb(204,204,204);
+  height: 5rem;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.song:hover {
+  background-color: rgb(239,237,242);
+}
+
+.glyphicon-play-circle {
+  color: rgb(255,0,171);
+  font-size: 1.75rem;
+}
+
+
